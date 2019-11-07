@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/td.wapiti.application/bin/Debug/netcoreapp3.0/td.wapiti.application.dll",
+            "program": "${workspaceFolder}/Src/td.wapiti.application/bin/Debug/netcoreapp3.0/td.wapiti.application.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/td.wapiti.application",
+            "cwd": "${workspaceFolder}/Src/td.wapiti.application",
             "console": "internalConsole",
             "stopAtEntry": false
         },
