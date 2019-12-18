@@ -4,6 +4,7 @@ namespace Wapiti.Domain.Entities
 {
     public class Card
     {
+        public string Id { get; private set; } 
         public string Name { get; private set; }
         public Set Set { get; set; }
         public string DisplayName {

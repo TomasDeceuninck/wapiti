@@ -21,3 +21,5 @@ echo
 echo Installing PowerShell
 echo ---------------------
 dotnet tool install --global PowerShell
+dotnet tool install --global dotnet-ef --version 3.0.0
+dotnet tool install --global dotnet-aspnet-codegenerator --version 3.0.0

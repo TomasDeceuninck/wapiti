@@ -5,6 +5,7 @@ namespace Wapiti.Domain.Entities
 {
     public class Deck
     {
+        public long Id { get; set; }
         public string Name { get; set; }
         public List<Card> Mainboard { get; set; }
         public List<Card> Sideboard { get; set; }

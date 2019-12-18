@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Src/td.wapiti.application/td.wapiti.application.csproj",
+                "${workspaceFolder}/Src/Wapiti.Api/Wapiti.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Src/td.wapiti.application/td.wapiti.application.csproj",
+                "${workspaceFolder}/Src/Wapiti.Api/Wapiti.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/Src/td.wapiti.application/td.wapiti.application.csproj",
+                "${workspaceFolder}/Src/Wapiti.Api/Wapiti.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
