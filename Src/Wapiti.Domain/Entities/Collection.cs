@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace td.wapiti.domain
+namespace Wapiti.Domain.Entities
 {
     public class Collection
     {
         public string Name { get; set; }
         public List<Card> Cards { get; set; }
-        public List<CollectionDeck> Decks { get; set; }
+        public List<Deck> Decks { get; set; }
 
         // Constructor that takes no arguments:
         public Collection(string name)

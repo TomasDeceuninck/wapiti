@@ -1,33 +1,33 @@
 using System;
 
-namespace td.wapiti.domain
+namespace Wapiti.Domain.Entities
 {
-    public class Set
+    public class Card
     {
-        public string Code { get; private set; }
         public string Name { get; private set; }
+        public Set Set { get; set; }
         public string DisplayName {
             get
             {
-                string displayName = this.Code;
-                if(!String.IsNullOrEmpty(this.Name)){
-                    displayName = this.Name + " [" + displayName + "]";
+                string displayName = this.Name;
+                if(this.Set != null){
+                    displayName = displayName + " (" + this.Set + ")";
                 }
                 return displayName;
             }
         }
 
         // Constructor that takes no arguments:
-        public Set(string code)
+        public Card(string name)
         {
-            this.Code = code;
+            this.Name = name;
         }
 
         // Constructor that takes one argument:
-        public Set(string code, string name)
+        public Card(string name, Set set)
         {
-            this.Code = code;
             this.Name = name;
+            this.Set = set;
         }
 
         // Method that overrides the base class (System.Object) implementation.

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace td.wapiti.domain
+namespace Wapiti.Domain.Entities
 {
     public class Deck
     {
