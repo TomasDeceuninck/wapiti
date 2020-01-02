@@ -10,9 +10,9 @@ namespace Wapiti.Persistence
         {
         }
         public DbSet<Collection> Collections { get; set; }
-        public DbSet<Set> Sets { get; set; }
 		public DbSet<Card> Cards { get; set; }
 		public DbSet<Deck> Decks { get; set; }
+        public DbSet<DeckCard> DeckCards { get; set; }
 
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {
@@ -24,8 +24,8 @@ namespace Wapiti.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Set>()
-                .HasKey(s => s.Code);
+            modelBuilder.Entity<Card>()
+                .HasKey(c => c.Name);
         }
     }
 }

@@ -5,15 +5,15 @@ namespace Wapiti.Domain.Entities
 {
     public class Deck
     {
-        public long Id { get; set; }
+        public Guid Id { get; private set; }
         public string Name { get; set; }
-        public List<Card> Mainboard { get; set; }
-        public List<Card> Sideboard { get; set; }
+        public List<DeckCard> DeckList { get; set; }
 
         // Constructor that takes no arguments:
         public Deck(string name)
         {
             this.Name = name;
+            this.Id = Guid.NewGuid();
         }
 
         // Method that overrides the base class (System.Object) implementation.

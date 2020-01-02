@@ -5,7 +5,7 @@ namespace Wapiti.Domain.Entities
 {
     public class Collection
     {
-        public long Id { get; set; }
+        public Guid Id { get; private set; }
         public string Name { get; set; }
         public List<Card> Cards { get; set; }
         public List<Deck> Decks { get; set; }
@@ -14,6 +14,7 @@ namespace Wapiti.Domain.Entities
         public Collection(string name)
         {
             this.Name = name;
+            this.Id = Guid.NewGuid();
         }
 
         // Method that overrides the base class (System.Object) implementation.
