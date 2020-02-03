@@ -11,15 +11,15 @@ sudo DEBIAN_FRONTEND=noninteractive mv prod.list /etc/apt/sources.list.d/microso
 sudo DEBIAN_FRONTEND=noninteractive chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 sudo DEBIAN_FRONTEND=noninteractive chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 echo
-echo Installing .Net Core 3.0
+echo Installing .Net Core 3.1
 echo ------------------------
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get install apt-transport-https -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
-sudo DEBIAN_FRONTEND=noninteractive apt-get install dotnet-sdk-3.0 -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get install dotnet-sdk-3.1 -y
 echo
 echo Installing PowerShell
 echo ---------------------
 dotnet tool install --global PowerShell
-dotnet tool install --global dotnet-ef --version 3.0.0
-dotnet tool install --global dotnet-aspnet-codegenerator --version 3.0.0
+dotnet tool install --global dotnet-ef
+dotnet tool install --global dotnet-aspnet-codegenerator
