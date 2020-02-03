@@ -5,14 +5,12 @@ namespace Wapiti.Domain.Entities
 {
     public class Card
     {
-        public string Id { get; private set; }
         public string Name { get; private set; }
 
         // Constructor that takes no arguments:
         public Card(string name)
         {
             this.Name = name;
-            this.Id = Hasher.GetHashString(name);
         }
 
         // Constructor that takes one argument:

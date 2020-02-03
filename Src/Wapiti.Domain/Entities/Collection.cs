@@ -15,6 +15,8 @@ namespace Wapiti.Domain.Entities
         {
             this.Name = name;
             this.Id = Guid.NewGuid();
+            this.Cards = new List<Card>();
+            this.Decks = new List<Deck>();
         }
 
         // Method that overrides the base class (System.Object) implementation.

@@ -11,7 +11,7 @@ namespace Wapiti.Application.Common.Interfaces
         DbSet<Collection> Collections { get; set; }
 		DbSet<Card> Cards { get; set; }
 		DbSet<Deck> Decks { get; set; }
-        DbSet<DeckCard> DeckCards { get; set; }
+        DbSet<DeckBoard> DeckBoards { get; set; }
         DatabaseFacade Database { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
