@@ -7,8 +7,9 @@ namespace Wapiti.Domain.Entities
     {
         public Guid Id { get; private set; }
         public string Name { get; set; }
-        public string DeckId { get; set; }
-        public List<Card> Cards { get; set; }
+        public Guid DeckId { get; set; }
+        public Deck Deck { get; set; }
+        public List<DeckBoardCard> Cards { get; set; }
 
         public string DisplayName {
             get
@@ -19,12 +20,12 @@ namespace Wapiti.Domain.Entities
         }
 
         // Constructor that takes one argument:
-        public DeckBoard(string deckId, string name)
+        public DeckBoard(Guid deckId, string name)
         {
             this.Id = Guid.NewGuid();
             this.DeckId = deckId;
             this.Name = name;
-            this.Cards = new List<Card>();
+            this.Cards = new List<DeckBoardCard>();
         }
 
         // Method that overrides the base class (System.Object) implementation.

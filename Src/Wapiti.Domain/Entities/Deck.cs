@@ -7,23 +7,12 @@ namespace Wapiti.Domain.Entities
     {
         public Guid Id { get; private set; }
         public string Name { get; set; }
-        public string CollectionId { get; set; }
+        public Guid CollectionId { get; set; }
+        public Collection Collection { get; set; }
         public List<DeckBoard> DeckList { get; set; }
 
-        public List<Card> CardList {
-            get
-            {
-                List<Card> _cardList = new List<Card>();
-                foreach(DeckBoard board in this.DeckList)
-                {
-                    _cardList.AddRange(board.Cards);
-                }
-                return _cardList;
-            }
-        }
-
         // Constructor that takes no arguments:
-        public Deck(string name, string collectionId)
+        public Deck(string name, Guid collectionId)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
