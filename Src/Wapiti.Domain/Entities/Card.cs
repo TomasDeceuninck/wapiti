@@ -1,18 +1,22 @@
 using System;
+using System.Collections.Generic;
 using Wapiti.Domain.Infrastructure;
 
 namespace Wapiti.Domain.Entities
 {
     public class Card
     {
-        public string Id { get; private set; }
+        // public string Id { get; private set; }
         public string Name { get; private set; }
+        public List<CollectionCard> CollectionCards { get; set; }
+        public List<DeckCard> DeckCards { get; set; }
+
 
         // Constructor that takes no arguments:
         public Card(string name)
         {
+            // this.Id = Hasher.GetHashString(name);
             this.Name = name;
-            this.Id = Hasher.GetHashString(name);
         }
 
         // Constructor that takes one argument:
