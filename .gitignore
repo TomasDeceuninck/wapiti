@@ -9,6 +9,3 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
-
-# EF Core migrations
-[Mm]igrations/
