@@ -46,7 +46,7 @@ namespace Wapiti.Domain.Infrastructure
 
         // Other utility methods ...
 
-        public static bool TryParse<T>(string str,out T output) where T:Enumeration
+        public static bool TryParse<T>(string str, out T output) where T : Enumeration
         {
             var all = GetAll<T>();
             output = all.FirstOrDefault(o => o.Name.Equals(str, StringComparison.OrdinalIgnoreCase));
