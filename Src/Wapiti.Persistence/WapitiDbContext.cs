@@ -9,10 +9,12 @@ namespace Wapiti.Persistence
         public WapitiDbContext(DbContextOptions<WapitiDbContext> options) : base(options)
         {
         }
+
+		public DbSet<Card> Cards { get; set; }
+        public DbSet<CollectionCard> CollectionCards { get; set; }
         public DbSet<Collection> Collections { get; set; }
-        public DbSet<Card> Cards { get; set; }
-        public DbSet<Deck> Decks { get; set; }
-        public DbSet<DeckBoard> DeckBoards { get; set; }
+        public DbSet<DeckCard> DeckCards { get; set; }
+		public DbSet<Deck> Decks { get; set; }
 
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {
@@ -24,37 +26,35 @@ namespace Wapiti.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Card
             modelBuilder.Entity<Card>()
                 .HasKey(c => c.Name);
+            // CollectionCard
             modelBuilder.Entity<CollectionCard>()
-                .HasKey(cc => new { cc.CardName, cc.CollectionId});
-            modelBuilder.Entity<CollectionCard>()
-                .HasOne(cc => cc.Card)
-                .WithMany(c => c.CollectionCards)
-                .HasForeignKey(cc => cc.CardName);
+                .HasKey(cc => new { cc.CollectionId, cc.CardName});
             modelBuilder.Entity<CollectionCard>()
                 .HasOne(cc => cc.Collection)
                 .WithMany(c => c.Cards)
                 .HasForeignKey(cc => cc.CollectionId);
+            modelBuilder.Entity<CollectionCard>()
+                .HasOne(cc => cc.Card)
+                .WithMany(c => c.CollectionCards)
+                .HasForeignKey(cc => cc.CardName);
+            // Collection
             modelBuilder.Entity<Collection>()
                 .HasMany<Deck>(c => c.Decks)
                 .WithOne(d => d.Collection);
-            modelBuilder.Entity<Deck>()
-                .HasOne<Collection>(d => d.Collection)
-                .WithMany(c => c.Decks);
-            modelBuilder.Entity<Deck>()
-                .HasMany<DeckBoard>(d => d.DeckList)
-                .WithOne(db => db.Deck);
-            modelBuilder.Entity<DeckBoardCard>()
-                .HasKey(dbc => new { dbc.CardName, dbc.DeckBoardId});
-            modelBuilder.Entity<DeckBoardCard>()
-                .HasOne(dbc => dbc.Card)
-                .WithMany(c => c.DeckBoardCards)
-                .HasForeignKey(dbc => dbc.CardName);
-            modelBuilder.Entity<DeckBoardCard>()
-                .HasOne(dbc => dbc.DeckBoard)
-                .WithMany(db => db.Cards)
-                .HasForeignKey(dbc => dbc.DeckBoardId);
+            // DeckCard
+            modelBuilder.Entity<DeckCard>()
+                .HasKey(dc => new { dc.DeckId, dc.CardName});
+            modelBuilder.Entity<DeckCard>()
+                .HasOne(dc => dc.Deck)
+                .WithMany(d => d.DeckList)
+                .HasForeignKey(dc => dc.DeckId);
+            modelBuilder.Entity<DeckCard>()
+                .HasOne(dc => dc.Card)
+                .WithMany(c => c.DeckCards)
+                .HasForeignKey(dc => dc.CardName);
         }
     }
 }
