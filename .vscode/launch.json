@@ -10,15 +10,15 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Src/Wapiti.Api/bin/Debug/netcoreapp3.0/Wapiti.Api.dll",
+            "program": "${workspaceFolder}/Src/Wapiti.Api/bin/Debug/netcoreapp3.1/Wapiti.Api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Src/Wapiti.Api",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
                 "action": "openExternally",
-                //"uriFormat": "%s"
-                "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+                "uriFormat": "%s/api/cards"
+                //"pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
