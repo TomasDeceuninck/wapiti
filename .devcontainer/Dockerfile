@@ -9,6 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y \
    #&& apt-get -y install --no-reccomends <your-package-list-here> \
    && dotnet tool install --global PowerShell \
+   && git config --global core.autocrlf true \
    #
    # Clean up
    && apt-get autoremove -y \
