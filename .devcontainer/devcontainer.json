@@ -2,9 +2,11 @@
     "name": "Wapiti Environment",
     "dockerFile": "Dockerfile",
     "extensions": [
-        "ms-vscode.csharp",
+        "eamodio.gitlens",
         "yzhang.markdown-all-in-one",
+        "streetsidesoftware.code-spell-checker",
         "redhat.vscode-yaml",
+        "ms-vscode.csharp",
         "alexcvzz.vscode-sqlite"
     ],
     "settings": {
