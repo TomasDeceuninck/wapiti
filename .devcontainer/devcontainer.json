@@ -1,5 +1,6 @@
 {
-    "name": "VS Online DotNetCore Environment",
+    "name": "Wapiti Environment",
+    "dockerFile": "Dockerfile",
     "extensions": [
         "ms-vscode.csharp",
         "yzhang.markdown-all-in-one",
@@ -9,5 +10,5 @@
     "settings": {
     },
     "forwardPorts": [5000,5001],
-    "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log"
+    //"postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log"
 }
